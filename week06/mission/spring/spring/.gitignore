@@ -4,12 +4,18 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
-week00
-week01
-week05
-week06
-week06/practice
-week06/mission/spring/
+# 루트에서 무시할 폴더
+/week00/
+/week01/
+/week05/
+/week06/practice/
+
+# week06/mission/spring/spring/만 허용
+/week06/
+!week06/mission/
+week06/mission/*
+!week06/mission/spring/
+week06/mission/spring/*
 !week06/mission/spring/spring/
 
 ### STS ###
