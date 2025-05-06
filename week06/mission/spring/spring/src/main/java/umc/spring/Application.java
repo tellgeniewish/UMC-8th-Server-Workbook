@@ -15,6 +15,7 @@ import umc.spring.domain.enums.SocialType;
 import umc.spring.repository.MemberRepository.MemberRepository;
 import umc.spring.service.ReveiwService.ReviewQueryService;
 import umc.spring.service.StoreService.StoreQueryService;
+import umc.spring.service.MissionService.MissionQueryService;
 
 @SpringBootApplication
 @EnableJpaAuditing
@@ -59,13 +60,20 @@ public class Application {
 			// 하드코딩
 			long memberId = 1L; // L은 리터럴로, long 타입임을 명시하는 접미사
 
+			// 리뷰 추가 확인
 			ReviewQueryService ReviewService = context.getBean(ReviewQueryService.class);
 			Review egReview = ReviewService.addReview("짱이네요!", 4.5F, memberId, 1L);
 			System.out.println(egReview);
 
-			//MissionStatus status = MissionStatus.CHALLENGING;
+			// 하드코딩
+			Long regionId = 1L;
+			MissionStatus status = MissionStatus.CHALLENGING;
 
-			//MissionQueryService MissionService = context.getBean(MissionQueryService.class);
+			// 미션 확인
+			MissionQueryService MissionService = context.getBean(MissionQueryService.class);
+			System.out.println("Missions Test regionId " + regionId + ":");
+			MissionService.findAllMissionsByRegionId(regionId)
+					.forEach(System.out::println);
 
 		};
 	}
