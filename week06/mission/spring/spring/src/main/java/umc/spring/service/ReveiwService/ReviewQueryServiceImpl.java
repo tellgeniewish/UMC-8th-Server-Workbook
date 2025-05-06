@@ -2,11 +2,13 @@ package umc.spring.service.ReveiwService;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import umc.spring.domain.Review;
 import umc.spring.repository.ReviewRepository.ReviewRepository;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class ReviewQueryServiceImpl implements ReviewQueryService{
     private final ReviewRepository reviewRepository; // 의존성 주입
 
