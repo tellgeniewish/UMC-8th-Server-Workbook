@@ -32,6 +32,11 @@ public class Application {
 
 			storeService.findStoresByNameAndScore(name, score)
 					.forEach(System.out::println);
+
+			long memberId = 1L; // L은 리터럴로, long 타입임을 명시하는 접미사
+			
+
+
 		};
 	}
 }
