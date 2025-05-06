@@ -6,6 +6,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import umc.spring.domain.Member;
+import umc.spring.domain.Review;
+import umc.spring.domain.enums.Gender;
+import umc.spring.domain.enums.MemberStatus;
+import umc.spring.domain.enums.MissionStatus;
+import umc.spring.domain.enums.SocialType;
+import umc.spring.repository.MemberRepository.MemberRepository;
+import umc.spring.service.ReveiwService.ReviewQueryService;
 import umc.spring.service.StoreService.StoreQueryService;
 
 @SpringBootApplication
@@ -32,6 +40,33 @@ public class Application {
 
 			storeService.findStoresByNameAndScore(name, score)
 					.forEach(System.out::println);
+
+			MemberRepository memberRepository = context.getBean(MemberRepository.class);
+
+			Member member = Member.builder()
+					.name("홍길동")
+					.address("서울시 마포구")
+					.specAddress("연남동 123-4")
+					.gender(Gender.MALE)
+					.socialType(SocialType.KAKAO)
+					.status(MemberStatus.ACTIVE)
+					.email("hong@example.com")
+					.point(100)
+					.build();
+
+			memberRepository.save(member); // DB에 저장됨
+
+			// 하드코딩
+			long memberId = 1L; // L은 리터럴로, long 타입임을 명시하는 접미사
+
+			ReviewQueryService ReviewService = context.getBean(ReviewQueryService.class);
+			Review egReview = ReviewService.addReview("짱이네요!", 4.5F, memberId, 1L);
+			System.out.println(egReview);
+
+			//MissionStatus status = MissionStatus.CHALLENGING;
+
+			//MissionQueryService MissionService = context.getBean(MissionQueryService.class);
+
 		};
 	}
 }
