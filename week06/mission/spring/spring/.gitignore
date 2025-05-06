@@ -4,6 +4,13 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
+week00
+week01
+week05
+week06
+week06/practice
+week06/mission/spring/
+!week06/mission/spring/spring/
 
 ### STS ###
 .apt_generated
