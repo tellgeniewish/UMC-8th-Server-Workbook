@@ -1,9 +1,10 @@
 package umc.spring.repository.MissionRepository;
 
+import org.springframework.data.domain.Pageable;
 import umc.spring.domain.Mission;
-
+import org.springframework.data.domain.Page;
 import java.util.List;
 
 public interface MissionRepositoryCustom {
-    List<Mission> showAllMissionsByRegionId(Long regionId);
+    Page<Mission> showAllMissionsByRegionId(Long regionId, Pageable pageable);
 }

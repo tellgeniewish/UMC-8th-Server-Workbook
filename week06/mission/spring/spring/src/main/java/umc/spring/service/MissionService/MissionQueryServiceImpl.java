@@ -1,6 +1,8 @@
 package umc.spring.service.MissionService;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import umc.spring.domain.Mission;
@@ -18,8 +20,8 @@ public class MissionQueryServiceImpl implements MissionQueryService {
     private final MemberMissionRepository memberMissionRepository;
 
     @Override
-    public List<Mission> findAllMissionsByRegionId(Long regionId) {
-        return missionRepository.showAllMissionsByRegionId(regionId);
+    public Page<Mission> findAllMissionsByRegionId(Long regionId, Pageable pageable) {
+        return missionRepository.showAllMissionsByRegionId(regionId, pageable);
     }
 
     @Override

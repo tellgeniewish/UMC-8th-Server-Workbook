@@ -5,8 +5,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import umc.spring.domain.Member;
+import umc.spring.domain.Mission;
 import umc.spring.domain.Review;
 import umc.spring.domain.enums.Gender;
 import umc.spring.domain.enums.MemberStatus;
@@ -72,9 +75,12 @@ public class Application {
 
 			MissionQueryService MissionService = context.getBean(MissionQueryService.class);
 			// 지역별 미션 확인
-//			System.out.println("Missions Test regionId " + regionId + ":");
+			System.out.println("Missions Test regionId " + regionId + ":");
+			PageRequest pageRequest = PageRequest.of(0, 5); // 0페이지, 최대 5개씩
 //			MissionService.findAllMissionsByRegionId(regionId)
 //					.forEach(System.out::println);
+			Page<Mission> page = MissionService.findAllMissionsByRegionId(regionId, pageRequest);
+			page.getContent().forEach(System.out::println);
 
 			// 멤버 아이디랑 미션 상태로 미션 확인
 //			MissionService.findAllMissionsByMemberIdAndMissionStatus(memberId, status)
