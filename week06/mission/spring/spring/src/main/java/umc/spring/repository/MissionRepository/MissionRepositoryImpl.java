@@ -7,6 +7,8 @@ import umc.spring.domain.QMission;
 
 import java.util.List;
 
+import static umc.spring.domain.QStore.store;
+
 @RequiredArgsConstructor
 public class MissionRepositoryImpl implements MissionRepositoryCustom {
     private final JPAQueryFactory queryFactory;
@@ -17,6 +19,7 @@ public class MissionRepositoryImpl implements MissionRepositoryCustom {
 
         List<Mission> missions = queryFactory
                 .selectFrom(mission)
+                .join(mission.store, store).fetchJoin() // fetch join 추가
                 .where(mission.store.region.id.eq(regionId))
                 .fetch();
 
