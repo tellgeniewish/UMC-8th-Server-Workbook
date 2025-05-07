@@ -6,6 +6,5 @@ import java.util.List;
 import java.util.Optional;
 
 public interface MemberQueryService {
-    Optional<Member> findMember(Long id);
-    List<Member> findMembersByNameAndScore(String name, Float score);
+    Member getMyPageInfo(Long memberId);
 }

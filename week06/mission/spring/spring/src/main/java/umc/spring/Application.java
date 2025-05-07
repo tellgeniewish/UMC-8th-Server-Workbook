@@ -13,6 +13,7 @@ import umc.spring.domain.enums.MemberStatus;
 import umc.spring.domain.enums.MissionStatus;
 import umc.spring.domain.enums.SocialType;
 import umc.spring.repository.MemberRepository.MemberRepository;
+import umc.spring.service.MemberService.MemberQueryService;
 import umc.spring.service.ReveiwService.ReviewQueryService;
 import umc.spring.service.StoreService.StoreQueryService;
 import umc.spring.service.MissionService.MissionQueryService;
@@ -39,8 +40,8 @@ public class Application {
 			System.out.println("Name: " + name);
 			System.out.println("Score: " + score);
 
-			storeService.findStoresByNameAndScore(name, score)
-					.forEach(System.out::println);
+//			storeService.findStoresByNameAndScore(name, score)
+//					.forEach(System.out::println);
 
 			MemberRepository memberRepository = context.getBean(MemberRepository.class);
 
@@ -63,20 +64,25 @@ public class Application {
 			// 리뷰 추가 확인
 			ReviewQueryService ReviewService = context.getBean(ReviewQueryService.class);
 			Review egReview = ReviewService.addReview("짱이네요!", 4.5F, memberId, 1L);
-			System.out.println(egReview);
+//			System.out.println(egReview);
 
 			// 하드코딩
 			Long regionId = 1L;
 			MissionStatus status = MissionStatus.CHALLENGING;
 
-			// 지역별 미션 확인
 			MissionQueryService MissionService = context.getBean(MissionQueryService.class);
-			System.out.println("Missions Test regionId " + regionId + ":");
-			MissionService.findAllMissionsByRegionId(regionId)
-					.forEach(System.out::println);
+			// 지역별 미션 확인
+//			System.out.println("Missions Test regionId " + regionId + ":");
+//			MissionService.findAllMissionsByRegionId(regionId)
+//					.forEach(System.out::println);
+
 			// 멤버 아이디랑 미션 상태로 미션 확인
-			MissionService.findAllMissionsByMemberIdAndMissionStatus(memberId, status)
-					.forEach(System.out::println);
+//			MissionService.findAllMissionsByMemberIdAndMissionStatus(memberId, status)
+//					.forEach(System.out::println);
+
+			MemberQueryService MemberService = context.getBean(MemberQueryService.class);
+			Member myPageInfo = MemberService.getMyPageInfo(memberId);
+			System.out.println("myPageInfo: " + myPageInfo);
 		};
 	}
 }
