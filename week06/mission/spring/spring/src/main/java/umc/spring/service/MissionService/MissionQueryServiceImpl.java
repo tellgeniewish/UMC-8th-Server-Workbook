@@ -25,7 +25,7 @@ public class MissionQueryServiceImpl implements MissionQueryService {
     }
 
     @Override
-    public List<Mission> findAllMissionsByMemberIdAndMissionStatus(Long memberId, MissionStatus status) {
-        return memberMissionRepository.showAllMissionsByMemberIdAndStatus(memberId, status);
+    public Page<Mission> findAllMissionsByMemberIdAndMissionStatus(Long memberId, MissionStatus status, Pageable pageable) {
+        return memberMissionRepository.showAllMissionsByMemberIdAndStatus(memberId, status, pageable);
     }
 }

@@ -11,5 +11,5 @@ import java.util.List;
 public interface MissionQueryService {
     Page<Mission> findAllMissionsByRegionId(Long regionId, Pageable pageable);
 
-    List<Mission> findAllMissionsByMemberIdAndMissionStatus(Long memberId, MissionStatus status);
+    Page<Mission> findAllMissionsByMemberIdAndMissionStatus(Long memberId, MissionStatus status, Pageable pageable);
 }

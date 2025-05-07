@@ -85,6 +85,8 @@ public class Application {
 			// 멤버 아이디랑 미션 상태로 미션 확인
 //			MissionService.findAllMissionsByMemberIdAndMissionStatus(memberId, status)
 //					.forEach(System.out::println);
+			Page<Mission> missionPage = MissionService.findAllMissionsByMemberIdAndMissionStatus(memberId, status, PageRequest.of(0, 5));
+			missionPage.getContent().forEach(System.out::println);
 
 			MemberQueryService MemberService = context.getBean(MemberQueryService.class);
 			Member myPageInfo = MemberService.getMyPageInfo(memberId);
