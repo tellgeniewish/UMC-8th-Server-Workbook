@@ -69,12 +69,14 @@ public class Application {
 			Long regionId = 1L;
 			MissionStatus status = MissionStatus.CHALLENGING;
 
-			// 미션 확인
+			// 지역별 미션 확인
 			MissionQueryService MissionService = context.getBean(MissionQueryService.class);
 			System.out.println("Missions Test regionId " + regionId + ":");
 			MissionService.findAllMissionsByRegionId(regionId)
 					.forEach(System.out::println);
-
+			// 멤버 아이디랑 미션 상태로 미션 확인
+			MissionService.findAllMissionsByMemberIdAndMissionStatus(memberId, status)
+					.forEach(System.out::println);
 		};
 	}
 }
