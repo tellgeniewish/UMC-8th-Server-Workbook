@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="176375b5-6ef6-41b0-b17c-4f4ca93a6fa5" name="genie-server-fir">
+        <fileTransfer accessType="SFTP" host="3.38.32.96" port="22" sshConfigId="8e90ae9a-e22a-4952-9a5e-d839bb2b736f" sshConfig="ubuntu@3.38.32.96:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
