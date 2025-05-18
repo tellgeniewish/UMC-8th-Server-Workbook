@@ -9,7 +9,7 @@ import java.time.LocalDate;
 public class MissionRequestDTO {
     @Getter
     public static class AddMissionDto{
-        @NotNull
+        @Positive
         @Min(value = 1)
         private Integer reward;
 

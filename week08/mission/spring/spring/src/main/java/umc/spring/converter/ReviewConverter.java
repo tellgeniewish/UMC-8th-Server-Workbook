@@ -15,6 +15,7 @@ public class ReviewConverter {
                 .createdAt(LocalDateTime.now())
                 .build();
     }
+
     public static Review toReview(ReviewRequestDTO.AddReviewDto request, Store store, Member member){
         return Review.builder()
                 .content(request.getContent())
@@ -23,5 +24,4 @@ public class ReviewConverter {
                 .member(member)
                 .build();
     }
-
 }
