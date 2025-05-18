@@ -32,6 +32,7 @@ public class Application {
 	@Bean
 	public CommandLineRunner run(ApplicationContext context) {
 		return args -> {
+			/*
 			StoreQueryService storeService = context.getBean(StoreQueryService.class);
 
 			// 파라미터 값 설정
@@ -92,6 +93,7 @@ public class Application {
 			MemberQueryService MemberService = context.getBean(MemberQueryService.class);
 			Member myPageInfo = MemberService.getMyPageInfo(memberId);
 			System.out.println("myPageInfo: " + myPageInfo);
+			*/
 		};
 	}
 }
