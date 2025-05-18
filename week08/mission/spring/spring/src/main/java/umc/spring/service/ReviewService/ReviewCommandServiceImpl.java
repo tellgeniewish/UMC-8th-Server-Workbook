@@ -24,9 +24,10 @@ public class ReviewCommandServiceImpl implements ReviewCommandService{
 
     @Override
     @Transactional
-    public Review addReview(ReviewRequestDTO.AddReviewDto request) {
+    public Review addReview(Long storeId, ReviewRequestDTO.AddReviewDto request) {
         Member member =  memberRepository.findById(request.getMemberId()).orElseThrow(() -> new MemberHandler(ErrorStatus.MEMBER_NOT_FOUND));
-        Store store = storeRepository.findById(request.getStoreId()).orElseThrow(() -> new StoreHandler(ErrorStatus.STORE_NOT_FOUND));
+//        Store store = storeRepository.findById(request.getStoreId()).orElseThrow(() -> new StoreHandler(ErrorStatus.STORE_NOT_FOUND));
+        Store store = storeRepository.findById(storeId).orElseThrow(() -> new StoreHandler(ErrorStatus.STORE_NOT_FOUND));
 
         Review newReview = ReviewConverter.toReview(request, store, member);
 

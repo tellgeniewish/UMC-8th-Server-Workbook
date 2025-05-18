@@ -2,6 +2,7 @@ package umc.spring.web.dto;
 
 import jakarta.validation.constraints.*;
 import lombok.Getter;
+import umc.spring.validation.annotation.ExistStore;
 
 public class ReviewRequestDTO {
     @Getter
