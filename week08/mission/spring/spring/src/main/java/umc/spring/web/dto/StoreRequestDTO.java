@@ -10,8 +10,8 @@ public class StoreRequestDTO {
         String name;
         @Size(min = 5, max = 12)
         String address;
-        @Min(0)
-        @Max(100)
+        @DecimalMin(value = "0.0", inclusive = true)
+        @DecimalMax(value = "100.0", inclusive = true)
         Float score;
         @NotNull
         Long regionId;

@@ -1,4 +1,4 @@
-package umc.spring.service.ReveiwService;
+package umc.spring.service.ReviewService;
 
 import umc.spring.domain.Review;
 
