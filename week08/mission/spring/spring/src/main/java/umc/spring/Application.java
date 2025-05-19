@@ -5,21 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
-import umc.spring.domain.Member;
-import umc.spring.domain.Mission;
-import umc.spring.domain.Review;
-import umc.spring.domain.enums.Gender;
-import umc.spring.domain.enums.MemberStatus;
-import umc.spring.domain.enums.MissionStatus;
-import umc.spring.domain.enums.SocialType;
-import umc.spring.repository.MemberRepository.MemberRepository;
-import umc.spring.service.MemberService.MemberQueryService;
-import umc.spring.service.ReveiwService.ReviewQueryService;
-import umc.spring.service.StoreService.StoreQueryService;
-import umc.spring.service.MissionService.MissionQueryService;
 
 @SpringBootApplication
 @EnableJpaAuditing
@@ -32,6 +18,7 @@ public class Application {
 	@Bean
 	public CommandLineRunner run(ApplicationContext context) {
 		return args -> {
+			/*
 			StoreQueryService storeService = context.getBean(StoreQueryService.class);
 
 			// 파라미터 값 설정
@@ -92,6 +79,7 @@ public class Application {
 			MemberQueryService MemberService = context.getBean(MemberQueryService.class);
 			Member myPageInfo = MemberService.getMyPageInfo(memberId);
 			System.out.println("myPageInfo: " + myPageInfo);
+			*/
 		};
 	}
 }
