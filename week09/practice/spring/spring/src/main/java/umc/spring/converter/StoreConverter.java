@@ -1,5 +1,6 @@
 package umc.spring.converter;
 
+import org.springframework.data.domain.Page;
 import umc.spring.domain.Region;
 import umc.spring.domain.Review;
 import umc.spring.domain.Store;
@@ -8,6 +9,7 @@ import umc.spring.web.dto.StoreResponseDTO;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class StoreConverter {
     public static StoreResponseDTO.AddStoreResultDTO toAddStoreResultDTO(Store store){
@@ -24,12 +26,5 @@ public class StoreConverter {
                 .score(request.getScore())
                 .region(region)
                 .build();
-    }
-
-    public static StoreResponseDTO.ReviewPreViewDTO reviewPreViewDTO(Review review){
-        return null;
-    }
-    public static StoreResponseDTO.ReviewPreViewListDTO reviewPreViewListDTO(List<Review> reviewList){
-        return null;
     }
 }
