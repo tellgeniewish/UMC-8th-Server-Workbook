@@ -45,4 +45,11 @@ public class MemberMissionConverter {
                 .build();
 //        return null;
     }
+
+    public static MemberMissionResponseDTO.MemberMissionPreViewDTO toCompleteResultDTO(MemberMission memberMission) {
+        return MemberMissionResponseDTO.MemberMissionPreViewDTO.builder()
+                .missionId(memberMission.getMission().getId())
+                .status(memberMission.getStatus())
+                .build();
+    }
 }

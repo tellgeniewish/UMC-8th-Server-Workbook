@@ -9,10 +9,12 @@ import umc.spring.apiPayload.expection.handler.MissionHandler;
 import umc.spring.converter.MemberMissionConverter;
 import umc.spring.domain.Mission;
 import umc.spring.domain.Member;
+import umc.spring.domain.enums.MissionStatus;
 import umc.spring.domain.mapping.MemberMission;
 import umc.spring.repository.MemberMissionRepository.MemberMissionRepository;
 import umc.spring.repository.MemberRepository.MemberRepository;
 import umc.spring.repository.MissionRepository.MissionRepository;
+import umc.spring.web.dto.MemberMissionResponseDTO;
 
 @Service
 @RequiredArgsConstructor
@@ -30,5 +32,14 @@ public class MemberMissionCommandServiceImpl implements MemberMissionCommandServ
         MemberMission newMemberMission = MemberMissionConverter.toReverseMission(member, mission);
 
         return memberMissionRepository.save(newMemberMission);
+    }
+
+    @Override
+    public MemberMissionResponseDTO.MemberMissionPreViewDTO completeMission(Long memberId, Long missionId) {
+        MemberMission memberMission = memberMissionRepository.findByMemberIdAndMissionId(memberId, missionId).orElseThrow(() -> new RuntimeException("해당 멤버 미션이 없습니다."));
+
+        memberMission.setStatus(MissionStatus.COMPLETE);
+
+        return MemberMissionConverter.toCompleteResultDTO(memberMission);
     }
 }
