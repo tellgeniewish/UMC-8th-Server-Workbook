@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f3fc3d96-26d5-4026-abef-5f9be49e9d81" name="Changes" comment="" />
+    <list default="true" id="e61c329a-963b-4ce4-a0df-a4587dfe772b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../week01/practice_datagrip/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week01/practice_datagrip/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week01/practice_datagrip/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week01/practice_datagrip/.idea/practice_datagrip.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week01/practice_datagrip/.idea/vcs.xml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,26 +21,38 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 4
+  &quot;associatedIndex&quot;: 6
 }</component>
-  <component name="ProjectId" id="2xIrk35PU8RW6diC83zXIasRdty" />
+  <component name="ProjectId" id="2xx2iIRlJw1VevmkSgzuH5LaqNL" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.Build spring.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
+    "Spring Boot.Application.executor": "Run",
+    "git-widget-placeholder": "feat/#8",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/25-1/Club/UMC_8th/server/week09/practice/spring",
+    "last_opened_file_path": "D:/25-1/Club/UMC_8th/server/week10/spring/spring",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -63,14 +81,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f3fc3d96-26d5-4026-abef-5f9be49e9d81" name="Changes" comment="" />
-      <created>1747636584316</created>
+      <changelist id="e61c329a-963b-4ce4-a0df-a4587dfe772b" name="Changes" comment="" />
+      <created>1748865530220</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1747636584316</updated>
-      <workItem from="1747636597340" duration="147000" />
-      <workItem from="1747636971520" duration="437000" />
-      <workItem from="1748276684149" duration="120000" />
+      <updated>1748865530220</updated>
+      <workItem from="1748865532219" duration="17953000" />
+      <workItem from="1748886310492" duration="5335000" />
     </task>
     <servers />
   </component>
