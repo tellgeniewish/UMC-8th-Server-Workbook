@@ -1,5 +1,6 @@
 package umc.spring.web.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -10,6 +11,7 @@ import umc.spring.service.MemberService.MemberCommandService;
 import umc.spring.web.dto.MemberRequestDTO;
 
 @Controller
+@RequiredArgsConstructor
 public class MemberViewController { // 회원가입 폼 데이터를 처리하고, 회원가입 API를 정의한다. 회원가입 요청이 들어오면 MemberCommandService를 사용하여 회원가입 로직을 수행하며, 그 과정에서 발생할 수 있는 예외 처리를 담당
 
     private final MemberCommandService memberCommandService;
