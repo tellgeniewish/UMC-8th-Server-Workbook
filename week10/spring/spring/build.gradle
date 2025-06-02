@@ -51,6 +51,8 @@ dependencies {
 
 	// Thymeleaf 의존성
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	// thymeleaf에서도 security가 동작하게 하기 위해
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6:3.1.1.RELEASE'
 }
 
 tasks.named('test') {
