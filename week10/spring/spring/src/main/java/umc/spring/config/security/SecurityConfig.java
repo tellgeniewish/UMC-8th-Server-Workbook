@@ -16,7 +16,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((requests) -> requests // HTTP 요청에 대한 접근 제어를 설정
-                        .requestMatchers("/", "/home", "/signup", "/css/**").permitAll() // 특정 URL 패턴에 대한 접근 권한을 설정
+                        .requestMatchers("/", "/home", "/signup", "/members/signup", "/css/**").permitAll() // 특정 URL 패턴에 대한 접근 권한을 설정
                         .requestMatchers("/admin/**").hasRole("ADMIN") // 'ADMIN' 역할을 가진 사용자만 접근 가능하도록 제한
                         .anyRequest().authenticated() // 그 외 모든 요청에 대해 인증을 요구
                 )

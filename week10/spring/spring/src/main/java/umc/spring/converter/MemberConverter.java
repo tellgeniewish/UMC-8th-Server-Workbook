@@ -42,12 +42,15 @@ public class MemberConverter {
         int age = calculateAge(request.getBirthYear(), request.getBirthMonth(), request.getBirthDay());
 
         return Member.builder()
+                .name(request.getName())
+                .email(request.getEmail())
+                .password(request.getPassword())
+                .gender(gender)
+                .age(age)
                 .address(request.getAddress())
                 .specAddress(request.getSpecAddress())
-                .gender(gender)
-                .name(request.getName())
-                .age(age)
                 .memberPreferList(new ArrayList<>())
+                .role(request.getRole())
                 .build();
     }
 }
