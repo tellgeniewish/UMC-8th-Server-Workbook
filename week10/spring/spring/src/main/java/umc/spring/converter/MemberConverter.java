@@ -1,5 +1,9 @@
 package umc.spring.converter;
 
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import umc.spring.apiPayload.code.status.ErrorStatus;
+import umc.spring.apiPayload.expection.handler.MemberHandler;
 import umc.spring.domain.Member;
 import umc.spring.domain.enums.Gender;
 import umc.spring.web.dto.MemberRequestDTO;
@@ -9,6 +13,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Period;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MemberConverter {
     public static MemberResponseDTO.JoinResultDTO toJoinResultDTO(Member member){
@@ -51,6 +56,13 @@ public class MemberConverter {
                 .specAddress(request.getSpecAddress())
                 .memberPreferList(new ArrayList<>())
                 .role(request.getRole())
+                .build();
+    }
+
+    public static MemberResponseDTO.LoginResultDTO toLoginResultDTO(Long memberId, String accessToken) {
+        return MemberResponseDTO.LoginResultDTO.builder()
+                .memberId(memberId)
+                .accessToken(accessToken)
                 .build();
     }
 }
