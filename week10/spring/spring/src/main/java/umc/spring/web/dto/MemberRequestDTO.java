@@ -30,9 +30,9 @@ public class MemberRequestDTO {
         Integer birthMonth;
         @NotNull
         Integer birthDay;
-        @Size(min = 5, max = 12)
+        @Size(min = 2, max = 12)
         String address;
-        @Size(min = 5, max = 12)
+        @Size(min = 2, max = 12)
         String specAddress;
         @ExistCategories
         List<Long> preferCategory;
