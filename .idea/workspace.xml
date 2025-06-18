@@ -4,25 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f3fc3d96-26d5-4026-abef-5f9be49e9d81" name="Changes" comment="" />
+    <list default="true" id="20571fc2-4001-4b0b-86cc-bbb5e7082fa8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../week01/practice_datagrip/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../week01/practice_datagrip/.idea/dataSources.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExternalProjectsData">
-    <projectState path="$PROJECT_DIR$">
-      <ProjectState />
-    </projectState>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 4
-}</component>
-  <component name="ProjectId" id="2xIrk35PU8RW6diC83zXIasRdty" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2ygSFPkqvcXbeCP0yZaXW0EkLwV" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -30,28 +27,13 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
+    "git-widget-placeholder": "feat/10",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/25-1/Club/UMC_8th/server/week09/practice/spring",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
+    "last_opened_file_path": "D:/25-1/Club/UMC_8th/server/week11/spring/spring",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="spring.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="umc.spring.Application" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -63,14 +45,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f3fc3d96-26d5-4026-abef-5f9be49e9d81" name="Changes" comment="" />
-      <created>1747636584316</created>
+      <changelist id="20571fc2-4001-4b0b-86cc-bbb5e7082fa8" name="Changes" comment="" />
+      <created>1750254629878</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1747636584316</updated>
-      <workItem from="1747636597340" duration="147000" />
-      <workItem from="1747636971520" duration="437000" />
-      <workItem from="1748276684149" duration="120000" />
+      <updated>1750254629878</updated>
+      <workItem from="1750254646355" duration="77000" />
     </task>
     <servers />
   </component>
