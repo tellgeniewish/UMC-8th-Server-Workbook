@@ -3,10 +3,26 @@
   on:
     push:
       branches: [ dev ]  # develop 브랜치에 push가 일어날 때 실행
+    pull_request:
+      branches: [ dev ]
 
   jobs:
     build:
       runs-on: ubuntu-latest # (3).OS환경
+
+      services:
+        mysql:
+          image: mysql:8.0
+          env:
+            MYSQL_ROOT_PASSWORD: 1234
+            MYSQL_DATABASE: umc8th
+          ports:
+            - 3306:3306
+          options: >-
+            --health-cmd "mysqladmin ping --silent"
+            --health-interval 10s
+            --health-timeout 5s
+            --health-retries 5
 
       steps:
         - uses: actions/checkout@v3  # 저장소 코드 체크아웃
@@ -22,6 +38,15 @@
             cd ./src/main/resources
             echo "${{ secrets.APPLICATION_YML }}" > ./application.yml
           shell: bash
+
+        - name: Wait for MySQL to be ready
+          run: |
+            echo "Waiting for MySQL to be ready..."
+            for i in {1..10}; do
+              nc -z localhost 3306 && echo "MySQL is up!" && break
+              echo "MySQL not ready yet... retrying ($i/10)"
+              sleep 5
+            done
 
         - name: Grant execute permission for gradlew  # gradlew 실행 권한 부여
           run: chmod +x gradlew
