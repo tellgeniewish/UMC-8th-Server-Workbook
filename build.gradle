@@ -65,19 +65,23 @@ tasks.named('test') {
 }
 
 // QueryDSL Generated 소스 디렉토리 설정
-def generated = 'src/main/generated'
+def querydslDir = 'src/main/generated'
 
 sourceSets {
-	main.java.srcDirs += generated
+	main.java.srcDirs += querydslDir
 }
 
 //tasks.withType(JavaCompile).configureEach {
 //	options.annotationProcessorGeneratedSourcesDirectory = file(generated)
 //}
-tasks.withType(JavaCompile).configureEach {
-	options.generatedSourceOutputDirectory = file(generated)
+//tasks.withType(JavaCompile).configureEach {
+tasks.withType(JavaCompile) {
+	options.generatedSourceOutputDirectory = file(querydslDir)
 }
 
-tasks.named('clean') {
-	delete file(generated)
+//tasks.named('clean') {
+//	delete file(generated)
+//}
+clean.doLast {
+	file(querydslDir).deleteDir()
 }
