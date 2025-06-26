@@ -39,6 +39,8 @@ cloud:
   aws:
     s3:
       bucket: umc-8th-week12
+      path:
+        review: reviews
     region:
       static: ap-northeast-2
     stack:

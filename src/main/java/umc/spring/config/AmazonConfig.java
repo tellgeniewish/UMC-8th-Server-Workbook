@@ -22,6 +22,8 @@ public class AmazonConfig {
     private String region = "ap-northeast-2";
     @Value("${cloud.aws.s3.bucket}")
     private String bucket;
+    @Value("${cloud.aws.s3.path.review}")
+    private String reviewPath;
 
     @PostConstruct
     public void init() { this.awsCredentials = new BasicAWSCredentials(accessKey, secretKey); }
