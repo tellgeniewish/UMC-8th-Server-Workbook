@@ -3,6 +3,7 @@ package umc.spring.converter;
 import org.springframework.data.domain.Page;
 import umc.spring.domain.Member;
 import umc.spring.domain.Review;
+import umc.spring.domain.ReviewImage;
 import umc.spring.domain.Store;
 import umc.spring.web.dto.ReviewRequestDTO;
 import umc.spring.web.dto.ReviewResponseDTO;
@@ -51,5 +52,12 @@ public class ReviewConverter {
                 .reviewList(reviewPreViewDTOList)
                 .build();
 //        return null;
+    }
+
+    public static ReviewImage toReviewImage(String imageUrl, Review review) {
+        return ReviewImage.builder()
+                .imageUrl(imageUrl)
+                .review(review)
+                .build();
     }
 }

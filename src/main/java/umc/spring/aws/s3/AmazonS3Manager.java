@@ -24,7 +24,7 @@ public class AmazonS3Manager {
 
     private final UuidRepository uuidRepository;
 
-    public String uploadFile(String KeyName, MultipartFile file) throws IOException {
+    public String uploadFile(String KeyName, MultipartFile file) {// throws IOException {
         //return null;
         System.out.println(KeyName);
 
