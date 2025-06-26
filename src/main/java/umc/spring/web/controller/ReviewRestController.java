@@ -22,13 +22,13 @@ import umc.spring.web.dto.ReviewResponseDTO;
 public class ReviewRestController {
     private final ReviewCommandService reviewCommandService;
 
-//    @PostMapping("/")
-    @PostMapping("/{storeId}/reviews")
-    public ApiResponse<ReviewResponseDTO.AddReviewResultDTO> addReview(@PathVariable Long storeId, @RequestBody @Valid ReviewRequestDTO.AddReviewDto request){
-        Review review = reviewCommandService.addReview(storeId, request);
-        return ApiResponse.onSuccess(ReviewConverter.toAddReviewResultDTO(review));
-//        return null
-    }
+////    @PostMapping("/")
+//    @PostMapping("/{storeId}/reviews")
+//    public ApiResponse<ReviewResponseDTO.AddReviewResultDTO> addReview(@PathVariable Long storeId, @RequestBody @Valid ReviewRequestDTO.AddReviewDto request){
+//        Review review = reviewCommandService.addReview(storeId, request);
+//        return ApiResponse.onSuccess(ReviewConverter.toAddReviewResultDTO(review));
+////        return null
+//    }
 
     @PostMapping(
             value = "/{storeId}/reviews",
