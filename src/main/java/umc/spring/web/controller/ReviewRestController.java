@@ -45,4 +45,10 @@ public class ReviewRestController {
         Review review = reviewCommandService.createReview(memberId, storeId, request, reviewPicture);
         return ApiResponse.onSuccess(ReviewConverter.toAddReviewResultDTO(review));
     }
+
+    @DeleteMapping("/reviews/image")
+    public ApiResponse<String> deleteReviewImage(@RequestParam Long reviewId) {
+        reviewCommandService.deleteReviewImage(reviewId);
+        return ApiResponse.onSuccess("삭제 완료: " + reviewId);
+    }
 }

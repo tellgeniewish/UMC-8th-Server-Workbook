@@ -7,4 +7,5 @@ import umc.spring.web.dto.ReviewRequestDTO;
 public interface ReviewCommandService {
     Review addReview(Long storeId, ReviewRequestDTO.AddReviewDto request);
     Review createReview(Long memberId, Long storeId, ReviewRequestDTO.AddReviewDto request, MultipartFile reviewPicture);
+    void deleteReviewImage(Long reviewId);
 }

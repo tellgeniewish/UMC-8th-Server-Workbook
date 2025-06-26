@@ -9,10 +9,7 @@ import umc.spring.apiPayload.expection.handler.MemberHandler;
 import umc.spring.apiPayload.expection.handler.StoreHandler;
 import umc.spring.aws.s3.AmazonS3Manager;
 import umc.spring.converter.ReviewConverter;
-import umc.spring.domain.Member;
-import umc.spring.domain.Review;
-import umc.spring.domain.Store;
-import umc.spring.domain.Uuid;
+import umc.spring.domain.*;
 import umc.spring.repository.MemberRepository.MemberRepository;
 import umc.spring.repository.ReviewImageRepository.ReviewImageRepository;
 import umc.spring.repository.ReviewRepository.ReviewRepository;
@@ -67,5 +64,24 @@ public class ReviewCommandServiceImpl implements ReviewCommandService{
 
         reviewImageRepository.save(ReviewConverter.toReviewImage(pictureUrl, review));
         return reviewRepository.save(review);
+    }
+
+    public void deleteReviewImage(Long reviewId) {
+        ReviewImage reviewImage = reviewImageRepository.findByReviewId(reviewId)
+                .orElseThrow(() -> new RuntimeException("리뷰 이미지가 존재하지 않습니다."));
+        String imageUrl = reviewImage.getImageUrl();
+        String keyName = extractKeyFromUrl(imageUrl);
+
+        s3Manager.deleteFile(keyName);
+        reviewImageRepository.delete(reviewImage);
+        // 필요 시 DB에서도 삭제 (reviewImageRepository.deleteByKey(keyName); 등)
+    }
+
+    private String extractKeyFromUrl(String imageUrl) {
+        int idx = imageUrl.indexOf(".amazonaws.com/");
+        if (idx == -1) {
+            throw new IllegalArgumentException("S3 URL 형식이 아닙니다: " + imageUrl);
+        }
+        return imageUrl.substring(idx + ".amazonaws.com/".length()); // key만 추출
     }
 }
