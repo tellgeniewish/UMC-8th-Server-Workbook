@@ -11,16 +11,12 @@ import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 import umc.spring.apiPayload.ApiResponse;
 import umc.spring.converter.MemberMissionConverter;
-import umc.spring.converter.MissionConverter;
-import umc.spring.domain.Mission;
 import umc.spring.domain.mapping.MemberMission;
 import umc.spring.service.MemberMissionService.MemberMissionCommandService;
 import umc.spring.service.MemberMissionService.MemberMissionQueryService;
 import umc.spring.validation.annotation.CheckChallenge;
-import umc.spring.validation.annotation.ExistStore;
 import umc.spring.validation.annotation.ValidPage;
 import umc.spring.web.dto.MemberMissionResponseDTO;
-import umc.spring.web.dto.MissionResponseDTO;
 
 @RestController
 @RequiredArgsConstructor

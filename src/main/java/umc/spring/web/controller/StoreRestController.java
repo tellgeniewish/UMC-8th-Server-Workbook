@@ -26,8 +26,6 @@ import umc.spring.web.dto.ReviewResponseDTO;
 import umc.spring.web.dto.StoreRequestDTO;
 import umc.spring.web.dto.StoreResponseDTO;
 
-import java.util.List;
-
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/stores")

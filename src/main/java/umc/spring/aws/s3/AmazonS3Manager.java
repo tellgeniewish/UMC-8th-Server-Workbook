@@ -11,7 +11,6 @@ import umc.spring.config.AmazonConfig;
 import umc.spring.domain.Uuid;
 import umc.spring.repository.UuidRepository.UuidRepository;
 
-import javax.xml.crypto.dsig.keyinfo.KeyName;
 import java.io.IOException;
 
 @Slf4j
@@ -25,7 +24,6 @@ public class AmazonS3Manager {
     private final UuidRepository uuidRepository;
 
     public String uploadFile(String KeyName, MultipartFile file) {// throws IOException {
-        //return null;
         System.out.println(KeyName);
 
         ObjectMetadata metadata = new ObjectMetadata();
@@ -37,6 +35,7 @@ public class AmazonS3Manager {
         }
 
         return amazonS3.getUrl(amazonConfig.getBucket(), KeyName).toString();
+        //return null;
     }
 
     public String generateReviewKeyName(Uuid uuid) {

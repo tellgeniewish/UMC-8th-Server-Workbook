@@ -7,7 +7,6 @@ import umc.spring.domain.ReviewImage;
 import umc.spring.domain.Store;
 import umc.spring.web.dto.ReviewRequestDTO;
 import umc.spring.web.dto.ReviewResponseDTO;
-import umc.spring.web.dto.StoreResponseDTO;
 
 import java.time.LocalDateTime;
 import java.util.List;
