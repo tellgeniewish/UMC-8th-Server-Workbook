@@ -28,6 +28,8 @@ public class AmazonS3Manager {
 
         ObjectMetadata metadata = new ObjectMetadata();
         metadata.setContentLength(file.getSize());
+        // aws의 s3의 폴더의 파일에서 다운로드 말고 브라우저에서 사진 확인 가능
+        metadata.setContentType(file.getContentType());
         try {
             amazonS3.putObject(new PutObjectRequest(amazonConfig.getBucket(), KeyName, file.getInputStream(), metadata));
         } catch (IOException e){
